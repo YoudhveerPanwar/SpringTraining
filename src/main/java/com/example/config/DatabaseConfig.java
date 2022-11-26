@@ -35,7 +35,7 @@ public class DatabaseConfig {
 	}
 	
 	public DataSource dbDataSource() {
-		logger.log(Level.INFO, "CREATING DATASOURCE INSTANCE");
+		logger.log(Level.INFO, "CREATING DATASOURCE INSTANCE for url {0} ", env.getProperty("spring.datasource.url"));
 		return DataSourceBuilder.create()
 				.driverClassName(env.getProperty("spring.datasource.driver-class-name"))
 				.url(env.getProperty("spring.datasource.url"))

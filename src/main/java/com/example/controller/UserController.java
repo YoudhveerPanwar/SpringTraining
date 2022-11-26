@@ -2,8 +2,6 @@ package com.example.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,4 +43,9 @@ public class UserController {
 		return ResponseEntity.ok(user);
 	}
 	
+	@GetMapping(value = "/users")
+	public ResponseEntity<List<User>> getUsers() throws Exception {
+		System.out.println("get users ********");
+		return ResponseEntity.ok(userService.getUsers());
+	}
 }
