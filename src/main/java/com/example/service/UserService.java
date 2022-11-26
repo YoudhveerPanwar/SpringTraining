@@ -1,5 +1,6 @@
 package com.example.service;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,4 +39,8 @@ public class UserService {
 		return true;
 	}
 	
+	public List<User> getUsers() {
+		logger.log(Level.INFO,"****** Get all users ***** ");
+		return userRepository.findAll();
+	}
 }
